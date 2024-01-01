@@ -1,0 +1,9 @@
+#project
+node_modules
+.env
+.dist
+
+#misc
+.idea
+.fleet
+.vscode
