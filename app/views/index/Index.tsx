@@ -1,7 +1,9 @@
-import React from "react";
-
-const Index: React.FC = () => {
-  return <div>Rooad</div>;
-};
+function Index() {
+    return (
+        <div>
+            <p>Rooster</p>
+        </div>
+    );
+}
 
 export default Index;
