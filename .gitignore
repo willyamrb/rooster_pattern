@@ -2,8 +2,10 @@
 node_modules
 .env
 .dist
+dist
 
 #misc
 .idea
 .fleet
 .vscode
+.DS_Store
