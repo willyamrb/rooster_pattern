@@ -7,26 +7,15 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "plugin:prettier/recommended",
         "plugin:react/recommended",
-        "prettier"
+        "prettier",
     ],
     ignorePatterns: ["dist", ".eslintrc.cjs"],
     parserOptions: {
+        project: ["./**/tsconfig.json"],
         ecmaFeatures: {
-            jsx: true
-        }
-    },
-    overrides: [
-        {
-          files: ['*.ts', '*.tsx'],
-          extends: [
-            'plugin:@typescript-eslint/recommended',
-            'plugin:@typescript-eslint/recommended-requiring-type-checking',
-          ],
-          parserOptions: {
-            project: ['./tsconfig.json'],
-          },
+            jsx: true,
         },
-    ],
+    },
     parser: "@typescript-eslint/parser",
     plugins: ["react-refresh", "prettier", "react", "unused-imports"],
     rules: {
@@ -35,17 +24,22 @@ module.exports = {
             {
                 selector: "interface",
                 format: ["PascalCase"],
-                prefix: ["I"]
+                prefix: ["I"],
             },
             {
                 selector: "class",
-                format: ["PascalCase"]
+                format: ["PascalCase"],
             },
             {
-                selector: ["variable", "function", "objectLiteralProperty", "objectLiteralMethod"],
+                selector: [
+                    "variable",
+                    "function",
+                    "objectLiteralProperty",
+                    "objectLiteralMethod",
+                ],
                 types: ["function"],
-                format: ["StrictPascalCase", "strictCamelCase"]
-            }
+                format: ["StrictPascalCase", "strictCamelCase"],
+            },
         ],
         "prettier/prettier": "error",
         "react/jsx-indent": ["error", 4],
@@ -63,12 +57,12 @@ module.exports = {
                 vars: "all",
                 varsIgnorePattern: "^_",
                 args: "after-used",
-                argsIgnorePattern: "^_"
-            }
+                argsIgnorePattern: "^_",
+            },
         ],
         "react-refresh/only-export-components": [
             "warn",
-            { allowConstantExport: true }
-        ]
-    }
+            { allowConstantExport: true },
+        ],
+    },
 };
